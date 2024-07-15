@@ -1,0 +1,120 @@
+
+
+.signup_contain{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: rgba(255, 255, 255,.8);
+
+}
+
+.signup_img{
+    position: fixed;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat ;
+}
+
+.signup_divhead{
+    /* display: flex; */
+    /* background-color: transparent;
+    width: 50%;
+
+    
+    position: relative;
+    z-index: 1;
+    filter: blur(1px); */
+    position: relative;
+    width: 40%;
+    padding: 15px 30px;
+    border: 2px dotted rgba(255, 255, 255,0.9) ;
+    
+    box-shadow: 0 0 20px 5px black;
+    border-radius: 10px;  
+    backdrop-filter: blur(6px);  
+}
+
+
+.signup_divhead1{
+    position: relative;
+    z-index: 1;
+}
+
+.signup{
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.signup_form Label{
+    font-size: 15px;
+}
+
+.signup_div{
+    display: flex;
+    position: relative;
+    left: 10%;
+    margin-top: 20px;
+}
+
+.signup_5{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    margin-left: 20px;
+    
+}
+
+.signup_link{
+    text-decoration: none;
+    color: rgba(255, 255, 255,.9);
+    padding-left: 5px;   
+}
+
+.signup_input{
+    height: 30px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(221, 221, 212,.7);
+    padding: 15px;
+}
+
+.signup_input:focus{
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid rgba(221, 221, 212,.7);
+    box-shadow:  0 0 10px 2px black;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+}
+
+.form-label{
+    color: rgba(255, 255, 255,.7);
+    margin: 0;   
+}
+
+
+.signup_btn{
+    background-color: rgb(19, 109, 42);
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.signup_btn:hover{
+    background-color: rgb(19, 172, 19);
+    color: rgba(0, 0, 0,.8);
+}
+
+
+
+
+

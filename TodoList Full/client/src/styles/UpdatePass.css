@@ -1,0 +1,128 @@
+.update_contain{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: rgba(255, 255, 255,.8);    
+}
+
+.update_img{
+    position: fixed;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat ;
+}
+
+.update_divhead{
+    position: relative;
+    width: 60%;
+    padding: 15px 30px;
+    border-radius: 20px;  
+    backdrop-filter: blur(20px);  
+    box-shadow: 0 0 20px 5px black;
+}
+
+.update{
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0,.7);
+}
+
+
+.update_input{
+    background: transparent;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(221, 221, 212,.7);
+    padding: 10px;
+    font-size: 1rem;
+    
+    /* width: 60%; */
+}
+
+.update_input:focus{
+    background: transparent !important;
+    box-shadow: none;
+    border: 1px solid rgba(221, 221, 212,.7);
+    border-radius: 10px;
+    box-shadow:  0 0 10px 2px black;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.update_input::placeholder{
+    color: rgba(0, 0, 0,.6);
+}
+
+
+.update_1 h4{
+    font-size: 1rem ;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.update_2, 
+.update_3{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;   
+    margin-bottom: 3rem !important;
+    padding-inline: 2rem;
+}
+
+.update_3{
+    gap: 28px;
+}
+
+.update_label{
+    font-size: 1rem;
+}
+
+.update_4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.update_update,
+.update_signin{
+    padding: 10px 20px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+.update_update{
+    background-color: rgb(19, 109, 42);
+    outline: none;
+    border: none;
+}
+
+.update_update:hover{
+    background-color: rgb(19, 172, 19);
+    color: rgba(0, 0, 0,.8);
+}
+
+.update_signin{
+    outline: none;
+    border: none;
+    background-color: rgb(237, 58, 27);
+    color: rgb(255, 255, 255,.9);
+}
+
+.update_signin:hover{
+    background-color: rgb(247, 105, 83);
+    color: rgba(0, 0, 0,.8);
+}
