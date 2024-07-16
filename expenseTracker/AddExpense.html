@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <style>
+        .foot_amount{
+            position: relative;
+            
+        }
+        .foot_amount_price{
+            position: absolute;
+            right: 0;
+            column-span: 3;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="container-fluid text-center bg-primary p-3">Expense tracker</h1>
+    <div class="container">
+      <label for="expence"></label>
+      <input class="p-2" id="expence" type="text" placeholder="Expence name" />
+
+      <label for="amount"></label>
+      <input class="p-2" id="amount" type="number" placeholder="Amount" />
+
+      <button class="btn btn-success" onclick="my_function()">
+        Add Expence
+      </button>
+
+      <table class="table table-bordered mt-4">
+        <thead>
+          <tr>
+            <th>Expence name</th>
+            <th>amount</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody class="datas"></tbody>
+        <tfoot >
+            <tr class="foot_amount">
+                <td  class="foot_amount_price">Total Amount ₹ <span id="totalPrice">0</span></td>
+            </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <script>
+      let select_tbody = document.querySelector(".datas");
+
+      my_function = () => {
+        let input = document.querySelectorAll("input");
+        let arr = JSON.parse(sessionStorage.getItem("item")) ?? [];
+        let obj = {
+          inputtext: input[0].value,
+          inputAmount: input[1].value,
+          id: Math.floor(Math.random() * 100),
+        };
+        arr.push(obj);
+        sessionStorage.setItem("item", JSON.stringify(arr));
+        console.table(arr);
+        show();
+      };
+
+      function show() {
+        console.log(sessionStorage.getItem("item"));
+        let arr = JSON.parse(sessionStorage.getItem("item"));
+
+        select_tbody.innerHTML = "";
+
+        for (let i = 0; i < arr.length; i++) {
+          let tr_create = document.createElement("tr");
+          let exp_name = document.createElement("td");
+          let amount = document.createElement("td");
+          let action = document.createElement("td");
+          exp_name.innerText = arr[i].inputtext;
+          amount.innerHTML = arr[i].inputAmount;
+          action.innerHTML = (
+            `<button onclick="removeRow(${arr[i].id})">remove</button>`
+          );
+          tr_create.append(exp_name, amount, action);
+          select_tbody.append(tr_create);
+        }
+        sum();
+      }
+
+      function removeRow(button) {
+        // console.table(
+        //   sessionStorage.getItem("item"),
+        //   JSON.parse(sessionStorage.getItem("item"))
+        // );
+
+        let arr = JSON.parse(sessionStorage.getItem("item")) ;
+        let filter = arr.filter((e, i, s) => {
+          console.log(e.id, button);
+          return e.id !== button;
+        });
+
+        // console.table(filter);
+        sessionStorage.setItem("item", JSON.stringify(filter));
+        show();
+      }
+
+      function sum() {
+        let tot = document.getElementById("totalPrice");
+        let amount = document.querySelectorAll("table tr td:nth-child(even)");
+        // console.log(tot, amount, amount[0]["innerText"])
+        let sum =0;
+        // console.log(amount, amount);
+        amount.forEach(td => {
+            sum += parseInt(td.innerText);
+        })
+        tot.innerHTML =sum.toFixed(0);
+    }
+
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
